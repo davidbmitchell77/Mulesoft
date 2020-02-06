@@ -1,0 +1,14 @@
+%dw 1.0
+%output application/java
+---
+payload map ((payload01, indexOdPayload01) -> {
+	Name: payload01.Name as :string,
+	dbm77__Active__c: payload01.Active as :boolean,
+	dbm77__UPCProductCode__c: payload01.UPCProductCode as :string,
+	dbm77__Category__c: payload01.Category as :string,
+	dbm77__UnitsInStock__c: payload01.UnitsInStock as :number,
+	dbm77__ProductId__c: payload01.Id as :string,
+	dbm77__UnitsOnOrder__c: payload01.UnitsOnOrder as :number,
+	dbm77__Packaging__c: payload01.Packaging as :string
+ })
+ 

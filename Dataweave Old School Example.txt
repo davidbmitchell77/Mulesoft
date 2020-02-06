@@ -1,0 +1,14 @@
+%dw 1.0
+%input payload application/json
+%output application/java
+---
+payload map {
+	Name: $.Name as :string,
+	dbm77__Active__c: $.Active as :boolean,
+	dbm77__UPCProductCode__c: $.UPCProductCode as :string,
+	dbm77__Category__c: $.Category as :string,
+	dbm77__UnitsInStock__c: $.UnitsInStock as :number,
+	dbm77__ProductId__c: $.Id as :string,
+	dbm77__UnitsOnOrder__c: $.UnitsOnOrder as :number,
+	dbm77__Packaging__c: $.Packaging as :string
+ } filter $.Active__c as :boolean == true
